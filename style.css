@@ -1,0 +1,467 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("Backgrounds/Image.webp");
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;   
+    background-attachment: fixed;   
+    color: white;
+}
+
+
+header {
+    background-color: #ffffff;
+    border-bottom: 3px solid #e10600;
+    padding: 15px 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Mea Culpa", cursive;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #000;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #e10600;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar input {
+    padding: 7px 14px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    outline: none;
+}
+
+.heart, .bag {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.heart { color: #e10600; }
+.bag { color: #000; }
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero span {
+    color: #e10600;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero button {
+    background-color: #e10600;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #b00400;
+    transform: scale(1.05);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.product-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(8px); 
+    color: white; 
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-card .category {
+    font-size: 14px;
+    color: #777;
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e10600;
+    margin-top: 8px;
+}
+
+.product-preview {
+    padding: 100px 40px;
+}
+
+.preview-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.preview-image img {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.preview-details {
+    max-width: 500px;
+}
+
+.preview-details h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.preview-details h2 {
+    font-size: 28px;
+    color: #e10600;
+    margin-bottom: 20px;
+}
+
+.preview-details .description {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.sizes button,
+.size-btn {
+    margin: 5px;
+    padding: 10px 18px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sizes button:hover,
+.size-btn:hover,
+.size-btn.active {
+    background: #e10600;
+    border-color: #e10600;
+    color: white;
+}
+
+.preview-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#add-to-cart,
+#back-btn {
+    background-color: #e10600;
+    color: white;               
+    border: none;              
+    padding: 12px 25px;         
+    font-size: 16px;           
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;         
+    transition: 0.3s;
+}
+
+#add-to-cart:hover,
+#back-btn:hover {
+    background-color: #b00400;
+    transform: scale(1.05);
+}
+
+#favorite-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#favorite-btn.active {
+    background-color: #e10600;
+    color: white;
+    border-color: #e10600;
+}
+
+#favorite-btn:hover {
+    background-color: #b00400;
+    color: white;
+}
+
+.bag-item,
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    flex-wrap: wrap;
+}
+
+.bag-item img,
+.checkout-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.bag-item > div,
+.checkout-item > div {
+    flex: 1;
+    min-width: 150px;
+}
+
+.bag-item strong,
+.checkout-item strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.qty-controls button {
+    padding: 4px 10px;
+    border: none;
+    background: #e10600;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.qty-controls button:hover {
+    background: #b00400;
+}
+
+.remove-btn {
+    background: transparent;
+    border: 2px solid #e10600;
+    color: #e10600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #e10600;
+    color: white;
+}
+
+#bag-total, #checkout-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e10600;
+}
+
+.content {
+    max-width: 1200px;     
+    margin: 80px auto;     
+    padding: 0 20px;        
+    text-align: center;    
+}
+
+.content h1 {
+    font-size: 48px;
+    font-family: 'Mea Culpa', cursive;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 40px;
+}
+
+
+.product-grid {
+    max-width: 1200px;     
+    margin: 0 auto 60px;    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .preview-image img {
+        width: 100%;
+    }
+
+    .preview-details {
+        max-width: 100%;
+    }
+}
+
+.go-to-shop-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;                  
+    background-color: transparent;   
+    border: 2px solid #ff0000;        
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;            
+    box-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #ff0000;             
+}
+
+.go-to-shop-btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.1); 
+    box-shadow:
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 60px #ff0000;
+    transform: scale(1.05);          
+}
+

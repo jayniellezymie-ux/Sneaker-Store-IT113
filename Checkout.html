@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="co.css">
+</head>
+
+<body data-page="checkout">
+
+<h1>Checkout</h1>
+
+<div class="checkout-container">
+
+    <div class="shipping-form">
+        <h2>Shipping Details</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" id="address" placeholder="Address">
+        <input type="text" id="city" placeholder="City">
+        <input type="text" id="phone" placeholder="Phone Number">
+
+        <h3>Payment Method</h3>
+        <label><input type="radio" name="payment" value="COD"> Cash on Delivery</label>
+        <label><input type="radio" name="payment" value="GCash"> GCash</label>
+        <label><input type="radio" name="payment" value="Credit/Debit"> Credit/Debit</label>
+    </div>
+
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+
+        <div id="checkout-items"></div>
+
+        <h3>Total: ₱<span id="checkout-total">0</span></h3>
+
+        <button id="place-order-btn">Place Order</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites - Jovelistic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">Jovelistic</div>
+        <nav class="menu">
+            <a href="Newdrops.html">New Drop</a>
+            <a href="Mens.html">Mens</a>
+            <a href="Sales.html">Sale</a>
+            <a href="Womens.html">Womens</a>
+            <a href="Kids.html">Kids</a>
+        </nav>
+        <div class="right-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search sneakers">
+            </div>
+            
+            <a href="Checkout.html"><button>🛍️</button></a>
+        </div>
+    </div>
+</header>
+
+<section class="content">
+    <h1>My Favorites</h1>
+    <p>Here are the sneakers you favorited.</p>
+
+    <div id="favorites-grid" class="product-grid"></div>
+
+    <div id="empty-message" style="text-align:center; margin-top:40px; display:none;">
+        <p style="font-size:20px;">No Items in Favorites</p>
+        <a href="index.html" class="go-to-shop-btn">Go to Shop</a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const favoritesGrid = document.getElementById("favorites-grid");
+    const emptyMsg = document.getElementById("empty-message");
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if(favorites.length === 0){
+        emptyMsg.style.display = "block";
+    } else {
+        favorites.forEach(index => {
+            const product = products[index];
+            if(product){
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <a href="product.html?index=${index}">
+                        <img src="${product.img}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <div class="category">${product.category}</div>
+                        <div class="price">₱${product.price}</div>
+                    </a>
+                `;
+                favoritesGrid.appendChild(card);
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
